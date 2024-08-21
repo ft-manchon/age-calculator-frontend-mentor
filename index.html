@@ -15,22 +15,24 @@
     <div class="data-entry">
       <form action="">
         <div class="input-group">
-          <label for="b-day">Day</label>
-          <input type="number" id="b-day" placeholder="DD">
+          <label for="b-day" id="label-day">Day</label>
+          <input type="number" id="b-day" placeholder="DD" onblur="validateDay()">
           <span id="span-day" hidden>Must be a valid day</span>
         </div>
         <div class="input-group">
-          <label for="b-month">Month</label>
-          <input type="number" id="b-month" placeholder="MM">
+          <label for="b-month" id="label-month">Month</label>
+          <input type="number" id="b-month" placeholder="MM" onblur="validateMonth()">
           <span id="span-month" hidden>Must be a valid month</span>
         </div>
         <div class="input-group">
-          <label for="b-year">Year</label>
-          <input type="number" id="b-year" placeholder="YYYY">
+          <label for="b-year" id="label-year">Year</label>
+          <input type="number" id="b-year" placeholder="YYYY" onblur="validateYear()">
           <span id="span-year" hidden>Must be in the past</span>
         </div>
       </form>
-      <button><img src="images/icon-arrow.svg" alt="Icon Arrow"></button>
+      <div class="c-btn">
+        <button onclick="calculate()"><img src="images/icon-arrow.svg" alt="Icon Arrow"></button>
+      </div>
     </div>
     <div class="results">
       <div class="result-group" id="years">
@@ -47,5 +49,8 @@
       </div>
     </div>
   </main>
+
+  <script src="js/validation.js"></script>
+  <script src="js/calculate.js"></script>
 </body>
 </html>

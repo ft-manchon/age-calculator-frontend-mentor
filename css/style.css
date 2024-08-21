@@ -7,7 +7,7 @@
   --smokeyGrey: hsl(0, 1%, 44%);
   --offBlack: hsl(0, 0%, 8%);
   --font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 * {
@@ -19,52 +19,55 @@
 
 body {
   background-color: var(--offWhite);
-  padding: 3rem 0;
+  padding-top: 6rem;
 }
 
 main {
   background-color: var(--white);
-  border-radius: 1rem 1rem 8rem 1rem;
-  padding: 1.5rem;
+  border-radius: 1rem 1rem 4rem 1rem;
+  padding: 1rem;
   margin: auto;
   max-width: 750px;
-  width: 75%;
+  width: 90%;
 
   & .data-entry {
     border-bottom: 1px solid var(--lightGrey);
     padding-bottom: 2.5rem;
-    position: relative;
   }
-  
+
   & form {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 320px;
-    gap: 1rem;
-    
+    gap: 0.5rem;
+
     & .input-group {
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
-      
+
       & label {
         text-transform: uppercase;
-        font-size: 0.5rem;
+        font-size: 0.55rem;
         font-weight: 400;
         color: var(--smokeyGrey);
         letter-spacing: 2px;
       }
-      
+
       & input {
         border: 1px solid var(--lightGrey);
-        border-radius: 0.5rem;
+        border-radius: 0.25rem;
         font-size: 0.8rem;
         height: 1.8rem;
         padding: 1rem 0.5rem;
         width: 3.5rem;
       }
-      
+
+      & input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
       & input::placeholder,
       input:focus {
         font-size: 0.8rem;
@@ -72,55 +75,67 @@ main {
       }
 
       & span {
-        font-size: 0.5rem;
+        font-size: 0.4rem;
         font-style: italic;
         color: var(--lightRed);
+      }
+
+      & .label-error {
+        color: var(--lightRed);
+      }
+
+      & .input-error {
+        outline: 0.75px solid var(--lightRed);
       }
     }
   }
 
-  & button {
-    background-color: var(--purple);
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    position: absolute;
-    top: 75px;
-    right: 50%;
-    width: 45px;
-    height: 45px;
+  .c-btn {
+    position: relative;
 
-    & img {
-      width: 20px;
-      margin: auto;
+    & button {
+      background-color: var(--purple);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      position: absolute;
+      top: 1.25rem;
+      right: 40%;
+      width: 60px;
+      height: 60px;
+      
+      & img {
+        width: 30px;
+        margin: auto;
+      }
     }
-  }
-
-  & button:hover {
-    cursor: pointer;
-    background-color: var(--offBlack);
+    
+    & button:hover {
+      cursor: pointer;
+      background-color: var(--offBlack);
+    }
   }
 
   & .results {
     display: flex;
     flex-direction: column;
     padding-top: 2.5rem;
-
+    
     & .result-group {
       display: flex;
       gap: 0.5rem;
-
+      
       & .result {
         color: var(--purple);
       }
-
+      
       & .result,
       .text {
         padding: 0;
         margin: 0;
-        font-size: 2rem;
+        font-size: 2.25rem;
         font-style: italic;
         font-weight: 800;
       }
