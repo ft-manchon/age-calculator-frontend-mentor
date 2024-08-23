@@ -10,8 +10,11 @@ function validateDay() {
     input.classList.remove('input-error');
   } else {
     span.removeAttribute('hidden');
-    label.classList.add('label-error')
+    label.classList.add('label-error');
     input.classList.add('input-error');
+    if (bDay > 31) {
+      span.innerHTML = "Must be a valid day";
+    }
   }
 }
 
@@ -29,6 +32,9 @@ function validateMonth() {
     span.removeAttribute('hidden');
     label.classList.add('label-error');
     input.classList.add('input-error');
+    if (bMonth > 12) {
+      span.innerHTML = "Must be a valid month";
+    }
   }
 }
 
@@ -47,7 +53,10 @@ function validateYear() {
     input.classList.remove('input-error');
   } else {
     span.removeAttribute('hidden');
-    label.classList.add('label-error')
+    label.classList.add('label-error');
     input.classList.add('input-error');
+    if (bYear > actualYear) {
+      span.innerHTML = "Must be in the past";
+    }
   }
 }

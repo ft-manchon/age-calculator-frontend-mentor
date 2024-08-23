@@ -7,12 +7,12 @@
   --smokeyGrey: hsl(0, 1%, 44%);
   --offBlack: hsl(0, 0%, 8%);
   --font-family: 'Poppins', sans-serif;
-  font-size: 24px;
 }
 
 * {
   box-sizing: border-box;
   font-family: var(--font-family);
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
@@ -25,20 +25,23 @@ body {
 main {
   background-color: var(--white);
   border-radius: 1rem 1rem 4rem 1rem;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 1rem;
   margin: auto;
-  max-width: 750px;
+  max-width: 800px;
   width: 90%;
 
   & .data-entry {
-    border-bottom: 1px solid var(--lightGrey);
-    padding-bottom: 2.5rem;
+    height: 3rem;
   }
 
   & form {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 4rem;
     max-width: 320px;
     gap: 0.5rem;
 
@@ -91,7 +94,11 @@ main {
   }
 
   .c-btn {
+    border-top: 1px solid var(--lightGrey);
+    height: 1px;
     position: relative;
+    width: 100%;
+    margin-top: 1.75rem;
 
     & button {
       background-color: var(--purple);
@@ -101,17 +108,17 @@ main {
       align-items: center;
       padding: 0.5rem;
       position: absolute;
-      top: 1.25rem;
+      bottom: -1.5rem;
       right: 40%;
       width: 60px;
       height: 60px;
-      
+
       & img {
         width: 30px;
         margin: auto;
       }
     }
-    
+
     & button:hover {
       cursor: pointer;
       background-color: var(--offBlack);
@@ -121,16 +128,16 @@ main {
   & .results {
     display: flex;
     flex-direction: column;
-    padding-top: 2.5rem;
-    
+    /* padding-top: 2rem; */
+
     & .result-group {
       display: flex;
       gap: 0.5rem;
-      
+
       & .result {
         color: var(--purple);
       }
-      
+
       & .result,
       .text {
         padding: 0;
@@ -142,3 +149,51 @@ main {
     }
   }
 }
+
+@media (min-width: 600px) {
+  * {
+    font-size: 32px;
+  }
+
+  body {
+    padding-top: 1.5rem;
+  }
+
+  main {
+    padding: 1rem 1.5rem;
+    gap: 2.5rem;
+  }
+    
+    .data-entry form {
+      gap: 1.25rem;
+
+      & .input-group input {
+        width: 4.75rem;
+      }
+    }
+
+    .c-btn {
+      margin-top: 0.25rem;
+
+      & button {
+        top: -1.25rem;
+        left: 90%;
+        min-width: 80px;
+        min-height: 80px;
+        transition: 0.5s;
+
+        & img {
+          min-width: 40px;
+        }
+      }
+    }
+
+    .results {
+      margin-top: 1.5rem;
+
+      & .result,
+      .text {
+        font-size: 5rem;
+      }
+    }
+  }
